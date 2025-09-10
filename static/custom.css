@@ -1,0 +1,25 @@
+:root {
+    font-size: 13px;
+    /* 设置基础字体大小
+       /* --rs-font-family-mono: 'JetBrains Mono' ,Consolas , Monaco, 'Courier New', monospace; */
+}
+
+pre[class*="language-"] code {
+    font-size: 13px;
+}
+
+.code {
+    font-size: 13px;
+}
+
+.article__h2 {
+    font-size: 30px;
+}
+
+.article__h3 {
+    font-size: 25px;
+}
+
+.article__h4 {
+    font-size: 21px;
+}
