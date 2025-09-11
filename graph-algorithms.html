@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF" data-link-color="#307FFF" data-content-max-width="1350" data-resizable-sidebar="true" data-sidebar-width="300"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-09-11T19:25:27.486038649"><title>Graph's Algorithms | Mind and Hand</title><script type="application/json" id="virtual-toc-data">[{"id":"graph-algorithms","level":0,"title":"图中的算法","anchor":"#graph-algorithms"},{"id":"graph-algorithms-template","level":0,"title":"图的基础算法模板","anchor":"#graph-algorithms-template"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.css" rel="stylesheet"><link href="static/custom.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Graph's Algorithms | Mind and Hand"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Mind and Hand Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/graph-algorithms.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Graph's Algorithms | Mind and Hand"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF" data-link-color="#307FFF" data-content-max-width="1350" data-resizable-sidebar="true" data-sidebar-width="300"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-09-11T20:28:55.225030968"><title>Graph's Algorithms | Mind and Hand</title><script type="application/json" id="virtual-toc-data">[{"id":"graph-algorithms","level":0,"title":"图中的算法","anchor":"#graph-algorithms"},{"id":"graph-algorithms-template","level":0,"title":"图的基础算法模板","anchor":"#graph-algorithms-template"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.css" rel="stylesheet"><link href="static/custom.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Graph's Algorithms | Mind and Hand"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Mind and Hand Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/graph-algorithms.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Graph's Algorithms | Mind and Hand"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
     "@context": "http://schema.org",
     "@type": "WebPage",
     "@id": "writerside-documentation/graph-algorithms.html#webpage",
@@ -22,22 +22,22 @@ abstract class GraphCompute {
     }
 
     fun checkEmpty(): GraphCompute {
-        if (graph.isEmpty()) {
-            throw IllegalArgumentException(&quot;Graph is empty&quot;)
+        require(!graph.isEmpty()) {
+            &quot;Graph is empty&quot;
         }
         return this
     }
 
     fun checkDirected(expectedDirected: Boolean): GraphCompute {
-        if (graph.isDirected() != expectedDirected) {
-            throw IllegalArgumentException(&quot;Graph is not ${if (expectedDirected) &quot;directed&quot; else &quot;undirected&quot;}&quot;)
+        require(graph.isDirected() == expectedDirected) {
+            &quot;Graph is not ${if (expectedDirected) &quot;directed&quot; else &quot;undirected&quot;}&quot;
         }
         return this
     }
 
     fun checkWeighted(expectedWeighted: Boolean): GraphCompute {
-        if (graph.isWeighted() != expectedWeighted) {
-            throw IllegalArgumentException(&quot;Graph is not ${if (expectedWeighted) &quot;weighted&quot; else &quot;unweighted&quot;}&quot;)
+        require(graph.isWeighted() == expectedWeighted) {
+            &quot;Graph is not ${if (expectedWeighted) &quot;weighted&quot; else &quot;unweighted&quot;}&quot;
         }
         return this
     }
