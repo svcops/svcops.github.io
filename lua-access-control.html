@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF" data-link-color="#307FFF" data-content-max-width="1350" data-resizable-sidebar="true" data-sidebar-width="300"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-10-14T14:36:17.101473079"><title>Access Control | Mind and Hand</title><script type="application/json" id="virtual-toc-data">[]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.css" rel="stylesheet"><link href="static/custom.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Access Control | Mind and Hand"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Mind and Hand Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/lua-access-control.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Access Control | Mind and Hand"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF" data-link-color="#307FFF" data-content-max-width="1350" data-resizable-sidebar="true" data-sidebar-width="300"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-10-22T10:27:01.986447464"><title>Access Control | Mind and Hand</title><script type="application/json" id="virtual-toc-data">[]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.css" rel="stylesheet"><link href="static/custom.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Access Control | Mind and Hand"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Mind and Hand Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/lua-access-control.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Access Control | Mind and Hand"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
     "@context": "http://schema.org",
     "@type": "WebPage",
     "@id": "writerside-documentation/lua-access-control.html#webpage",
@@ -13,77 +13,10 @@
     "@id": "writerside-documentation/#website",
     "url": "writerside-documentation/",
     "name": "Mind and Hand Help"
-}</script><!-- End Schema.org --></head><body data-id="lua-access-control" data-main-title="Access Control" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="develop.md|Develop///lang-lua.md|Lua"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Mind and Hand  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="lua-access-control" id="lua-access-control.md">Access Control</h1><aside class="prompt" data-type="tip" data-title="" id="e2nnx4_3"><p id="e2nnx4_8">基于 <code class="code" id="e2nnx4_9">Lua</code> 的访问控制设计</p></aside><p id="e2nnx4_4"><span class="control" id="e2nnx4_10">整体逻辑</span> ：基于 <code class="code" id="e2nnx4_11">group_ip</code> 获取规则组，白名单或黑名单的模式匹配请求上下文，获取访问控制结果</p><p id="e2nnx4_5"><span class="control" id="e2nnx4_12">规则管理器 <code class="code" id="e2nnx4_13">manager</code>模块化提供</span> ，匹配时提供核心方法</p><ul class="list _bullet" id="e2nnx4_6"><li class="list__item" id="e2nnx4_14"><p id="e2nnx4_16"><span class="control" id="e2nnx4_17"><code class="code" id="e2nnx4_19">function get_rules(group_id)</code></span> ：基于 <code class="code" id="e2nnx4_18">group_id</code> 获取的规则列表方法</p></li><li class="list__item" id="e2nnx4_15"><p id="e2nnx4_20"><span class="control" id="e2nnx4_22"><code class="code" id="e2nnx4_24">function get_value_func(rule)</code></span>: 基于 <code class="code" id="e2nnx4_23">rule</code> 自生获取对应的 function</p><ul class="list _bullet" id="e2nnx4_21"><li class="list__item" id="e2nnx4_25"><p id="e2nnx4_27">设计的 <code class="code" id="e2nnx4_28">operator</code> 为 <code class="code" id="e2nnx4_29">function</code> 时，会寻找规则中的 方法规则进行匹配</p></li><li class="list__item" id="e2nnx4_26"><p id="e2nnx4_30">方法规则的设计目的是为了，对于规则中无法通过简单的字符串匹配的场景，实现更复杂的匹配</p></li></ul></li></ul><div class="code-block" data-lang="lua">
+}</script><!-- End Schema.org --></head><body data-id="lua-access-control" data-main-title="Access Control" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="develop.md|Develop///lang-lua.md|Lua"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Mind and Hand  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="lua-access-control" id="lua-access-control.md">Access Control</h1><aside class="prompt" data-type="tip" data-title="" id="g3e8n8_3"><p id="g3e8n8_8">基于 <code class="code" id="g3e8n8_9">Lua</code> 的访问控制设计</p></aside><p id="g3e8n8_4"><span class="control" id="g3e8n8_10">整体逻辑</span> ：基于 <code class="code" id="g3e8n8_11">group_ip</code> 获取规则组，白名单或黑名单的模式匹配请求上下文，获取访问控制结果</p><p id="g3e8n8_5"><span class="control" id="g3e8n8_12">规则管理器 <code class="code" id="g3e8n8_13">manager</code>模块化提供</span> ，匹配时提供核心方法</p><ul class="list _bullet" id="g3e8n8_6"><li class="list__item" id="g3e8n8_14"><p id="g3e8n8_17"><span class="control" id="g3e8n8_18"><code class="code" id="g3e8n8_20">function get_rules(group_id)</code></span> ：基于 <code class="code" id="g3e8n8_19">group_id</code> 获取的规则列表方法</p></li><li class="list__item" id="g3e8n8_15"><p id="g3e8n8_21"><span class="control" id="g3e8n8_23"><code class="code" id="g3e8n8_25">function get_value_func(rule)</code></span>: 基于 <code class="code" id="g3e8n8_24">rule</code> 自生获取对应的 function</p><ul class="list _bullet" id="g3e8n8_22"><li class="list__item" id="g3e8n8_26"><p id="g3e8n8_28">设计的 <code class="code" id="g3e8n8_29">operator</code> 为 <code class="code" id="g3e8n8_30">function</code> 时，会寻找规则中的 方法规则进行匹配</p></li><li class="list__item" id="g3e8n8_27"><p id="g3e8n8_31">方法规则的设计目的是为了，对于规则中无法通过简单的字符串匹配的场景，实现更复杂的匹配</p></li></ul></li><li class="list__item" id="g3e8n8_16"><p id="g3e8n8_32"><span class="control" id="g3e8n8_34"><code class="code" id="g3e8n8_36">function get_internal_function(rule)</code></span>: 基于 <code class="code" id="g3e8n8_35">rule</code> 自生获取对应的内置 function</p><ul class="list _bullet" id="g3e8n8_33"><li class="list__item" id="g3e8n8_37"><p id="g3e8n8_39">设计的 <code class="code" id="g3e8n8_40">operator</code> 为 <code class="code" id="g3e8n8_41">@function</code> 时，会寻找规则中的 内置方法规则进行匹配</p></li><li class="list__item" id="g3e8n8_38"><p id="g3e8n8_42">内置方法规则的设计目的是为了，提供一些常用的匹配方法，方便用户直接使用</p></li></ul></li></ul><div class="code-block" data-lang="lua">
 local _M = {}
 
-local rules_manager = require(&quot;lua_modules.http_req.access_control.rules_manager&quot;)
-
--- 构建acl的基础的结构
-local function build_ac_ctx(scheme, method, host, uri, request_uri, client_ip, headers)
-    if type(scheme) ~= &quot;string&quot; then
-        scheme = ngx.var.scheme or &quot;&quot;
-    end
-
-    if type(method) ~= &quot;string&quot; then
-        method = ngx.var.request_method or &quot;&quot;
-    end
-
-    if type(host) ~= &quot;string&quot; then
-        host = ngx.var.host or &quot;&quot;
-    end
-
-    if type(request_uri) ~= &quot;string&quot; then
-        request_uri = ngx.var.request_uri or &quot;&quot;
-    end
-
-    if type(uri) ~= &quot;string&quot; then
-        uri = ngx.var.uri or &quot;&quot;
-    end
-
-    if type(client_ip) ~= &quot;string&quot; then
-        client_ip = ngx.var.remote_addr or &quot;&quot;
-    end
-
-    if type(headers) ~= &quot;table&quot; then
-        headers = ngx.req.get_headers()
-    end
-
-    return {
-        scheme = scheme,
-        method = method,
-        host = host,
-        uri = uri,
-        request_uri = request_uri,
-        client_ip = client_ip,
-        headers = headers,
-    }
-end
-
--- 构建acl请求的基础结构
-function _M.build_ctx(scheme, method, host, uri, request_uri, client_ip, headers)
-    return build_ac_ctx(scheme, method, host, uri, request_uri, client_ip, headers)
-end
-
--- 获取存储规则对象中的操作函数
--- @param function_name string 函数名称
--- @param manager table 可选的规则管理器，默认为 rules_manager
--- @return function|nil 返回函数或nil
-local function get_target_function(function_name, manager)
-    if not manager then
-        manager = rules_manager
-    else
-        if type(manager) ~= &quot;table&quot; then
-            return nil, &quot;invalid manager type: expected table&quot;
-        end
-    end
-
-    -- 获取函数并检查
-    local func = manager[function_name]
-    if type(func) ~= &quot;function&quot; then
-        return nil, &quot;function not found: &quot; .. tostring(function_name)
-    end
-    return func, nil
-end
+local ac_utils = require(&quot;lua_modules.http_req.access_control.ac_utils&quot;)
 
 -- 匹配规则
 -- @param field_val 字段值
@@ -96,17 +29,11 @@ local function match_rule(field_val, operator, value, rule, manager)
     if not field_val or not operator then
         return false
     end
-    -- 方法
-    if operator == &quot;function&quot; then
-        -- 获取函数规则 函数的获取防范
-        local get_value_func, err = get_target_function(&quot;get_value_func&quot;, manager)
-        if not get_value_func then
-            ngx.log(ngx.ERR, &quot;Failed to get get_value_func function: &quot;, err)
-            return false
-        end
 
+    -- 方法,获取方法函数
+    if operator == &quot;function&quot; then
         -- 获取计算值的函数
-        local value_func, err = get_value_func(rule)
+        local value_func, err = ac_utils.get_value_func(rule, manager)
         if not value_func then
             ngx.log(ngx.ERR, &quot;failed to get function rule: &quot;, err or &quot;unknown error&quot;)
             return false
@@ -118,6 +45,30 @@ local function match_rule(field_val, operator, value, rule, manager)
         end
         -- 调用函数并确保返回布尔值
         local ok, res = pcall(value_func, field_val)
+        if not ok then
+            return false
+        end
+        if type(res) ~= &quot;boolean&quot; then
+            return false
+        end
+        return res
+    end
+
+    -- 方法，获取内置的方法
+    if operator == &quot;@function&quot; then
+        local func, err = ac_utils.get_internal_function(rule, manager)
+        if not func then
+            ngx.log(ngx.ERR, &quot;failed to get function: &quot;, err or &quot;unknown error&quot;)
+            return false
+        end
+
+        if type(func) ~= &quot;function&quot; then
+            ngx.log(ngx.ERR, &quot;func must be a function when operator is '@function'&quot;)
+            return false
+        end
+
+        -- 调用函数并确保返回布尔值
+        local ok, res = pcall(func, field_val)
         if not ok then
             return false
         end
@@ -223,4 +174,4 @@ function _M.check_ctx_blacklist(ctx, rules, manager)
 end
 
 return _M
-</div><div class="last-modified">14 October 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="lang-lua.html" class="navigation-links__prev">Lua</a><a href="lua-ac-redis-rules-operator.html" class="navigation-links__next">Redis Rules Operator</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
+</div><div class="last-modified">22 October 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="lang-lua.html" class="navigation-links__prev">Lua</a><a href="lua-ac-redis-rules-operator.html" class="navigation-links__next">Redis Rules Operator</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
